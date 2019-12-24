@@ -7,7 +7,7 @@ other moduli.
 
 - `lll_search.cpp` code searches for good multipliers for LCGs and MLCGs.
 - `lll_spect.cpp` prints spectral scores for a given multiplier.
-- `lll_printdat.cpp` prints configuration files for (LatticeTester)[https://github.com/umontreal- simul/latticetester] for a given multiplier.
+- `lll_printdat.cpp` prints configuration files for [LatticeTester](https://github.com/umontreal-simul/latticetester) for a given multiplier.
 
 The code is based on the Lenstra–Lenstra–Lovász lattice basis reduction
 algorithm, and as such it computes approximate results. Up to dimension 8,
