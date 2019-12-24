@@ -3,4 +3,5 @@ Data associated with the paper "Computationally easy, spectrally good multiplier
 
 The directory `src` contains the code used to sample multipliers.
 
-The databases of candidate multipliers are available at http://vigna.di.unimi.it/CPRNG.zip
+The databases of candidate multipliers are available at http://vigna.di.unimi.it/CPRNG.zip .
+(The size of the zip file is about 2 gigabytes; the unzipped data is about 5 gigabytes.)
