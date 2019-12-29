@@ -7,6 +7,9 @@ pseudorandom number generators”, by Guy Steele and Sebastiano Vigna.
 
 The directory `src` contains the code used to sample multipliers.
 
+The directory `python` contains the Python code used to select the
+multipliers reported in the paper.
+
 The databases of candidate multipliers are available at
 http://vigna.di.unimi.it/CPRNG.zip. (The size of the zip file is
 approximately 2 gigabytes; the unzipped data is approximately 5 gigabytes.)
