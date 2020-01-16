@@ -2,8 +2,9 @@ CPRNG
 =====
 
 This repository contains data and code associated with the paper
-“Computationally easy, spectrally good multipliers for congruential
-pseudorandom number generators”, by Guy Steele and Sebastiano Vigna.
+[“Computationally easy, spectrally good multipliers for congruential
+pseudorandom number generators”](http://arxiv.org/abs/2001.05304), by Guy
+Steele and Sebastiano Vigna.
 
 The directory `src` contains the code used to sample multipliers.
 
