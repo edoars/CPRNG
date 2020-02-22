@@ -2,11 +2,11 @@ Code for the Spectral Test
 ==========================
 
 The code in this directory deals with (approximate) spectral figures of
-merit and aggregate scores for LCGs and MLCGs with modulus that is a power
+merit and aggregate scores for LCGs and MCGs with modulus that is a power
 of 2. It can be easily adapted to other moduli. It uses
 [NTL](https://www.shoup.net/ntl/).
 
-- `lll_search.cpp` code searches for good multipliers for LCGs and MLCGs.
+- `lll_search.cpp` code searches for good multipliers for LCGs and MCGs.
 
 - `lll_spect.cpp` prints spectral scores and figures of merit for a given multiplier.
 
