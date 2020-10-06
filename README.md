@@ -12,5 +12,5 @@ The directory `python` contains the Python code used to select the
 multipliers reported in the paper.
 
 The databases of candidate multipliers are available at
-http://vigna.di.unimi.it/CPRNG.zip. (The size of the zip file is
+http://vigna.di.unimi.it/CPRNG.tar.bz2. (The size of the bzip2 file is
 approximately 2 gigabytes; the unzipped data is approximately 5 gigabytes.)
