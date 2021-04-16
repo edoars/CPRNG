@@ -25,42 +25,45 @@ using namespace std;
 #include "common.cpp"
 
 int main(int argc, char *argv[]) {
-	if (argc != 5) {
-		cerr << "USAGE: " << argv[0] << " MAXDIM MULTIPLIER MODULUS BASENAME" << endl << endl;
+	if (argc != 6) {
+		cerr << "USAGE: " << argv[0] << " LAG MAXDIM MULTIPLIER MODULUS BASENAME" << endl << endl;
 		cerr << "For the given multiplier and power-of-two modulus prints" << endl;
 		cerr << "input files for LatticeTester to compute the spectral" << endl;
-		cerr << "figures of merit up to the specified maximum dimension." << endl;
+		cerr << "figures of merit up to the specified maximum dimension" << endl;
+		cerr << "for the given lag." << endl;
 		exit(1);
 	}
 
-	const int max_dim = atoi(argv[1]);
+	const int lag = atoi(argv[1]);
 
-	if (max_dim > dim_max) {
-		cerr << "Maximum possible number of dimensions: " << dim_max << endl;
+	if (lag < 1) {
+		cerr << "The lag must be strictly positive" << endl;
 		exit(1);
 	}
+
+	const int max_dim = atoi(argv[2]);
 
 	if (max_dim < 2) {
 		cerr << "Minimum possible number of dimensions: 2" << endl;
 		exit(1);
 	}
 
-	ZZ a = strtoZZ(argv[2]);
-	ZZ mod = strtoZZ(argv[3]);
-	string basename(argv[4]);
+	ZZ a = strtoZZ(argv[3]);
+	ZZ mod = strtoZZ(argv[4]);
 
 	if (a >= mod) {
 		cerr << "The multiplier must be smaller than the modulus" << endl;
 		exit(1);
 	}
 
-	// Compute the normalization factor starting from gamma_t
-	for(int d = 2; d <= dim_max; d++)
-		norm[d - 2] = conv<double>(conv<RR>(1) / (pow(conv<RR>(norm[d - 2]), conv<RR>(1./2)) * pow(conv<RR>(mod), conv<RR>(1) / conv<RR>(d))));
+	string basename(argv[5]);
 
 	mat_ZZ x;
 	x.SetDims(max_dim, max_dim);
 
+	// Entacher's characterization of lagged lattices (https://dl.acm.org/doi/10.1145/301677.301682)
+	ZZ alag = PowerMod(a, lag, mod);
+	mod /= GCD(mod, conv<ZZ>(lag));
 #ifdef MULT
 	mod /= 4;
 #endif
@@ -74,7 +77,7 @@ int main(int argc, char *argv[]) {
 		// Dual lattice (see Knuth TAoCP Vol. 2, 3.3.4/B*).
 		x[0][0] = mod;
 		for (int i = 1; i < d; i++) x[i][i] = 1;
-		for (int i = 1; i < d; i++) x[i][0] = -power(a, i);
+		for (int i = 1; i < d; i++) x[i][0] = -power(alag, i);
 
 		for(int i = 0; i < d; i++) {
 			for(int j = 0; j < d; j++) {
