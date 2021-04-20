@@ -30,7 +30,7 @@ using namespace std;
 #include "common.cpp"
 
 // Only multipliers with a minimum spectral score larger than this value will be printed.
-const double threshold = 0.70;
+const double threshold = 0;//.70;
 
 int main(int argc, char *argv[]) {
 
@@ -42,7 +42,7 @@ int main(int argc, char *argv[]) {
 		cerr << "minimium figure of merit larger than " << threshold << " prints the minimum" << endl;
 		cerr << "spectral score, the harmonic spectral score, the multiplier" << endl;
 		cerr << "in decimal and hexadecimal, the figures of merit up to the" << endl;
-		cerr << "specified maximum dimension and lambda (TAB-separated)." << endl;
+		cerr << "specified maximum dimension (TAB-separated)." << endl;
 		cerr << "ITER can be used to limit the number of iterations. If ITER" << endl;
 		cerr << "is negative, -ITER multipliers of MSIZE bits are tested starting" << endl;
 		cerr << "from SEED * 8 + 5; otherwise, SEED is used to seed a pseudrandom" << endl;
@@ -164,11 +164,10 @@ int main(int argc, char *argv[]) {
 		harm_score /= harm_norm;
 
 		if (min_fm >= threshold) {
-			const double lambda = conv<double>(conv<RR>(a) / sqrt_mod);
 			printf("%8.6f\t%8.6f\t", min_fm, harm_score);
 			cout << a << "\t" << "0x" << hex(a);
 			for (int d = 2; d <= max_dim; d++) printf("\t%8.6f", cur_fm[d - 2]);
-			printf(lambda < 10000 ? "\t%11.6f\n" : "\t%g\n", lambda); 
+			printf(\n");
 		}
 	}
 }
