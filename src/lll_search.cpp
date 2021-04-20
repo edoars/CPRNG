@@ -30,7 +30,7 @@ using namespace std;
 #include "common.cpp"
 
 // Only multipliers with a minimum spectral score larger than this value will be printed.
-const double threshold = 0;//.70;
+const double threshold = 0.70;
 
 int main(int argc, char *argv[]) {
 
