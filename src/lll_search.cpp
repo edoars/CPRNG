@@ -167,7 +167,7 @@ int main(int argc, char *argv[]) {
 			printf("%8.6f\t%8.6f\t", min_fm, harm_score);
 			cout << a << "\t" << "0x" << hex(a);
 			for (int d = 2; d <= max_dim; d++) printf("\t%8.6f", cur_fm[d - 2]);
-			printf(\n");
+			printf("\n");
 		}
 	}
 }
