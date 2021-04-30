@@ -14,6 +14,9 @@ of 2. It can be easily adapted to other moduli. It uses
   [LatticeTester](https://github.com/umontreal-simul/latticetester) for a
   given multiplier.
 
+- `benchmark.c` is a simple microbenchmark comparing different multiplier
+  sizes (compilation instruction are at the start of the file).
+
 The code for spectral figures of merit is based on the
 Lenstra–Lenstra–Lovász lattice basis reduction algorithm, and as such it
 computes approximate results. Up to dimension 8, however, the
