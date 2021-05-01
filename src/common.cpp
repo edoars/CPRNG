@@ -78,8 +78,18 @@ static uint64_t next(void) {
 	return result;
 }
 
-// Conversion for large integers in hexadecimal form, too.
+// Conversion for large integers in hexadecimal form, too. Supports the "2^k" format.
 static ZZ strtoZZ(const char * const s) {
+	if (strstr(s, "2^") == s) {
+		// Special case: power of 2
+		long long p = strtoull(s + 2, NULL, 0);
+		if (p == 0) {
+			cerr << "Invalid power " << (s + 2) << endl;
+			abort();
+		}
+		return conv<ZZ>(1) << p;
+	}
+
 	if (s[0] == '0' && tolower(s[1]) == 'x') {
 		ZZ x = conv<ZZ>(0);
 		for(size_t i = 2; i < strlen(s); i++) {

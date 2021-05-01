@@ -23,7 +23,8 @@ computes approximate results. Up to dimension 8, however, the
 approximation is usually excellent (see
 <https://doi.org/10.1090/S0025-5718-01-01415-6>). If you want to get exact
 results for a multiplier, use LatticeTester with the configuration files
-provided by `lll_printdat`.
+provided by `lll_printdat`. Note that you can specify the modulus
+using the notation `2^k`.
 
 See the `comp.sh` script for the options needed to compile for the 
 case of LCGs or MCGs.
