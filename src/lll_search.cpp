@@ -9,7 +9,12 @@ See <http://creativecommons.org/publicdomain/zero/1.0/>. */
 /* Searches for multipliers with good spectral properties for power-of-two
    moduli by testing random candidates. Please see below where to insert your
    own candidate generation procedure. If MULT is defined, finds candidates for
-   MCGs; otherwise, for LCGs. */
+   MCGs; otherwise, for LCGs. 
+
+   See also Karl Entacher \& Thomas Schell's code at
+
+   https://web.archive.org/web/20181128022136/http://random.mat.sbg.ac.at/results/karl/spectraltest/
+*/
 
 #include <iostream>
 #include <limits>

@@ -8,7 +8,12 @@ See <http://creativecommons.org/publicdomain/zero/1.0/>. */
 
 /* Prints the figures of merit for a multiplier and a power-of-two
    modulus. If MULT is defined, computes figures of merit for an MCG;
-   otherwise, for an LCG. */
+   otherwise, for an LCG.
+
+   See also Karl Entacher \& Thomas Schell's code at
+
+   https://web.archive.org/web/20181128022136/http://random.mat.sbg.ac.at/results/karl/spectraltest/
+*/
 
 #include <iostream>
 #include <limits>
