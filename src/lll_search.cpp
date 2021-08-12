@@ -11,7 +11,13 @@ See <http://creativecommons.org/publicdomain/zero/1.0/>. */
    own candidate generation procedure. If MULT is defined, finds candidates for
    MCGs; otherwise, for LCGs. 
 
-   See also Karl Entacher \& Thomas Schell's code at
+   See also Karl Entacher & Thomas Schell's code associated with the paper
+
+   Karl Entacher, Thomas Schell, and Andreas Uhl. Efficient lattice assessment
+   for LCG and GLP parameter searches. Mathematics of Computation,
+   71(239):1231–1242, 2002.
+
+   at
 
    https://web.archive.org/web/20181128022136/http://random.mat.sbg.ac.at/results/karl/spectraltest/
 */
