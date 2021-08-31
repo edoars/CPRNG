@@ -72,7 +72,7 @@ int main(int argc, char *argv[]) {
 		ofstream s;
 		s.open(basename + "-" + to_string(d) + ".dat");
 //		s << "SPECTRAL BESTLAT" << endl << "PREREDDIETER" << endl << d << endl;
-		s << "SPECTRAL BESTLAT" << endl << "BKZ ARBITRARY 0.9999999999 100" << endl << d << endl;
+                s << "MERIT" << endl << "SPECTRAL" << endl << "BESTLAT" << endl << "true BKZ" << endl << "TERM" << endl << d << endl;
 		x.SetDims(d, d);
 		// Dual lattice (see Knuth TAoCP Vol. 2, 3.3.4/B*).
 		x[0][0] = mod;
@@ -87,7 +87,6 @@ int main(int argc, char *argv[]) {
 		}
 
 		// Max nodes, output
-		s << 1000000000 << endl << "TERMINAL" << endl;
 		s.close();
 	}
 }
